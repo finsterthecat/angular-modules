@@ -1,9 +1,5 @@
 import { NgModule }           from '@angular/core';
-import { CommonModule }  from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-//import { SharedModule }       from '../shared/shared.module';
-import { HighlightDirective } from './highlight.directive';
+import { SharedModule }       from '../shared/shared.module';
 
 import { HeroComponent }      from './hero.component';
 import { HeroDetailComponent }         from './hero-detail.component';
@@ -17,11 +13,10 @@ import { routing }            from './hero.routing';
 import { HeroService } from './hero.service';
 
 @NgModule({
-  imports: [ CommonModule, FormsModule, routing ],
+  imports: [ SharedModule, routing ],
   providers: [ HeroService ],
   declarations: [
-    HeroComponent, HeroDetailComponent, HeroListComponent,
-    HighlightDirective
+    HeroComponent, HeroDetailComponent, HeroListComponent
   ]
 })
 export default class HeroModule { }
